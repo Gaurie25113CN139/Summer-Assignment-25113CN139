@@ -11,7 +11,7 @@ int main () {
 	}
 	for (i= 0; i<temp; i++)
 	{
-		if (((num >> i) & 1)==0)
+		if (((num >> i) & 1)==1)
 		{
 			count++;
 		}
