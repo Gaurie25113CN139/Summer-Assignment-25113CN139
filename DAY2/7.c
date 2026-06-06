@@ -4,6 +4,12 @@ int main()
     int n, prod = 1, rem;
     printf("enter a no.: ");
     scanf("%d", &n);
+
+    if (n == 0)
+    {
+        printf("product of digits is 0");
+        return 0;
+    }
  
     while (n != 0)
     {
