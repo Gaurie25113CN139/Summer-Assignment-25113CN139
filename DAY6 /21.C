@@ -4,6 +4,11 @@ int main() {
 
     printf("enter a decimal no.: ");
     scanf("%d", &dec);
+    
+    if (dec == 0) {
+        printf("Binary no.: 0\n");
+        return 0;
+    }
 
     quo=dec;
     while (quo > 0) {
