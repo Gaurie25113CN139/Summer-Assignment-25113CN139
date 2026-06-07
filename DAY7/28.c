@@ -1,8 +1,5 @@
 // Write a program to Recursive reverse number.
-
-
 #include <stdio.h>
-
 int reverse(int n, int rev) {
     if (n == 0)
         return rev;
@@ -16,6 +13,5 @@ int main() {
     scanf("%d", &n);
 
     printf("reversed number = %d", reverse(n, 0));
-
     return 0;
 }
