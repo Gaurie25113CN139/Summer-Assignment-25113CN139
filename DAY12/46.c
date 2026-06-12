@@ -1,28 +1,43 @@
 // Write a program to Write function for Armstrong. 
 
 #include <stdio.h>
-int armstrong(int n)
-{
-    int sum = 0, rem, temp = n;
+#include <math.h>
 
-    while (n > 0) {
-        rem = n % 10;
-        sum = sum + rem * rem * rem;
-        n = n / 10;
-    }
-    return temp == sum;
-}   
-int main()
-{
+int countDigits(int num);
+int armstrong(int num);
+
+int main() {
     int n;
-
-    printf("enter a no.: ");
+    printf("enter a no: ");
     scanf("%d", &n);
 
-    if (armstrong(n))
-        printf("armstrong no.");
-    else
-        printf("not an armstrong no.");
+    if (armstrong(n)) {
+        printf("armstrong number");
+    } 
+    else {
+        printf("not an armstrong number");
+    }
 
     return 0;
+}
+int countDigits(int num) {
+    int count = 0;
+    while (num != 0) {
+        num /= 10;
+        count++;
+    }
+    return count;
+}
+
+int armstrong(int num) {
+    int originalNum = num;
+    int digits = countDigits(num);
+    int sum = 0;
+
+    while (num != 0) {
+        int rem = num % 10;
+        sum += (pow(rem, digits)); 
+        num /= 10;
+    }
+    return (sum == originalNum);
 }
