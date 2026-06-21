@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int main() {
-    int A[3][3], i, j, r, c, sum = 0;
+    int A[3][3], i, j, r, c, prim = 0, sec = 0;
     
     printf("enter rows and columns: ");
     scanf("%d %d", &r, &c);
@@ -18,12 +18,15 @@ int main() {
     for (i = 0; i < r; i++) {
         for (j = 0; j < c; j++) {
             if (i == j) {
-                sum += A[i][j];
+                prim+= A[i][j];
             }
+            if (i + j == r - 1) {
+                sec += A[i][j]; }
         }
     }
     
-    printf("diagonal sum: %d\n", sum);
+    printf("primary diagonal sum: %d\n", prim);
+    printf("secondary diagonal sum: %d\n", sec);
     
     return 0;
 }
